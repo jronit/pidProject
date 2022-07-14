@@ -5,6 +5,7 @@
 #pragma once
 
 #include <frc/TimedRobot.h>
+#include <rev/CANSparkMax.h>
 
 class Robot : public frc::TimedRobot {
  public:
@@ -22,4 +23,12 @@ class Robot : public frc::TimedRobot {
 
   void TestInit() override;
   void TestPeriodic() override;
+
+  rev::CANSparkMax * neo = new rev::CANSparkMax(18, rev::CANSparkMax::MotorType::kBrushless);
+
+  rev::SparkMaxRelativeEncoder encoder = neo->GetEncoder();
+  rev::SparkMaxPIDController pidController = neo->GetPIDController();
+
+
+
 };
