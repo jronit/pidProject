@@ -6,6 +6,7 @@
 
 #include <frc/TimedRobot.h>
 #include <rev/CANSparkMax.h>
+#include <frc/smartdashboard/SmartDashboard.h>
 
 class Robot : public frc::TimedRobot {
  public:

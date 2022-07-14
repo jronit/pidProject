@@ -10,8 +10,18 @@ void Robot::RobotPeriodic() {} // happens repeatedly
 void Robot::AutonomousInit() {}
 void Robot::AutonomousPeriodic() {}
 
-void Robot::TeleopInit() {}
+void Robot::TeleopInit() {
+
+  pidController.SetP(1);
+  pidController.SetD(0);
+  pidController.SetI(0);
+
+  encoder.SetPosition(0);
+
+}
 void Robot::TeleopPeriodic() {
+
+  neo->Set(.2);
 //test a change
 }
 
