@@ -22,6 +22,7 @@ void Robot::TeleopInit() {
 void Robot::TeleopPeriodic() {
 
   neo->Set(.2);
+  frc::SmartDashboard::PutNumber("Num Rotations", encoder.GetPosition());
 //test a change
 }
 
