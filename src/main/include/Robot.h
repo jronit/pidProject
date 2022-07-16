@@ -26,7 +26,7 @@ class Robot : public frc::TimedRobot {
   void TestInit() override;
   void TestPeriodic() override;
 
-  rev::CANSparkMax * neo = new rev::CANSparkMax(18, rev::CANSparkMax::MotorType::kBrushless);
+  rev::CANSparkMax * neo = new rev::CANSparkMax(10, rev::CANSparkMax::MotorType::kBrushless);
 
   rev::SparkMaxRelativeEncoder encoder = neo->GetEncoder();
   rev::SparkMaxPIDController pidController = neo->GetPIDController();
