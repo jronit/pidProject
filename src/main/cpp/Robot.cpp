@@ -24,8 +24,8 @@ void Robot::TeleopPeriodic() {
 
   //neo->Set(.2);
   pidController.SetReference(.75, rev::CANSparkMax::ControlType::kPosition);
-  frc::SmartDashboard::PutNumber("Num Rotations", encoder.GetPosition());
-  
+  frc::SmartDashboard::PutNumber("Num Rotations", encoder.GetPosition()); //
+
 
 }
 
