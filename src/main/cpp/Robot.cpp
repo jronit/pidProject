@@ -4,8 +4,8 @@
 
 #include "Robot.h"
 
-void Robot::RobotInit() {} // happens once
-void Robot::RobotPeriodic() {} // happens repeatedly
+void Robot::RobotInit() {} 
+void Robot::RobotPeriodic() {} 
 
 void Robot::AutonomousInit() {}
 void Robot::AutonomousPeriodic() {}
