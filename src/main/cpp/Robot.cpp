@@ -4,6 +4,7 @@
 
 #include "Robot.h"
 
+
 void Robot::RobotInit() {} 
 void Robot::RobotPeriodic() {} 
 
@@ -18,15 +19,24 @@ void Robot::TeleopInit() {
 
   encoder.SetPosition(0);
   neo->SetSmartCurrentLimit(10);
+  frc::SmartDashboard::PutNumber("Starting Point", 0);
+  frc::SmartDashboard::PutNumber("Setpoint", .5);
 
 }
 void Robot::TeleopPeriodic() {
 
-  //neo->Set(.2);
-  pidController.SetReference(.75, rev::CANSparkMax::ControlType::kPosition);
+  //neo->Set(.2); 
+  
+  
+
   frc::SmartDashboard::PutNumber("Num Rotations", encoder.GetPosition()); 
-  //frc::SmartDashboard::PutNumber("Starting Point", neo.GetPosition());
-  frc::SmartDashboard::PutNumber("Setpoint", 4);
+  double dashval = frc::SmartDashboard::GetNumber("Setpoint", .5);
+
+  double setPoint = -1;
+
+
+  pidController.SetReference(dashval, rev::CANSparkMax::ControlType::kPosition);
+
 
 }
 
