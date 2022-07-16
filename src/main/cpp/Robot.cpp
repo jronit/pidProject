@@ -17,13 +17,16 @@ void Robot::TeleopInit() {
   pidController.SetI(0);
 
   encoder.SetPosition(0);
+  neo->SetSmartCurrentLimit(10);
 
 }
 void Robot::TeleopPeriodic() {
 
-  neo->Set(.2);
+  //neo->Set(.2);
+  pidController.SetReference(.75, rev::CANSparkMax::ControlType::kPosition);
   frc::SmartDashboard::PutNumber("Num Rotations", encoder.GetPosition());
-//test a change
+  
+
 }
 
 void Robot::DisabledInit() {}
