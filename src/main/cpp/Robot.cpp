@@ -28,7 +28,6 @@ void Robot::TeleopPeriodic() {
   //neo->Set(.2); 
   
   
-
   frc::SmartDashboard::PutNumber("Num Rotations", encoder.GetPosition()); 
   double dashval = frc::SmartDashboard::GetNumber("Setpoint", .5);
 
